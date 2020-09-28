@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "qwCG6FxNqq+3wDhHMuDiies2dYxx5G+j2WTSv+O10tMhTG9njc3xWyQSRC+1PDT9oKM5E0pisXRMSxd3Hwx0RQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotRepositoryLayer\\ParkingLotRepositoryLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.3\\microsoft.aspnetcore.app.ref.3.1.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
