@@ -1,0 +1,5 @@
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotRepositoryLayer\bin\Debug\netcoreapp3.1\ParkingLotRepositoryLayer.deps.json
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotRepositoryLayer\bin\Debug\netcoreapp3.1\ParkingLotRepositoryLayer.dll
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotRepositoryLayer\obj\Debug\netcoreapp3.1\ParkingLotRepositoryLayer.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotRepositoryLayer\obj\Debug\netcoreapp3.1\ParkingLotRepositoryLayer.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotRepositoryLayer\obj\Debug\netcoreapp3.1\ParkingLotRepositoryLayer.AssemblyInfo.cs

@@ -4,14 +4,14 @@
     "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotRepositoryLayer\\ParkingLotRepositoryLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotRepositoryLayer\\ParkingLotRepositoryLayer.csproj": {
+    "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotModelLayer\\ParkingLotModelLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotRepositoryLayer\\ParkingLotRepositoryLayer.csproj",
-        "projectName": "ParkingLotRepositoryLayer",
-        "projectPath": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotRepositoryLayer\\ParkingLotRepositoryLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotModelLayer\\ParkingLotModelLayer.csproj",
+        "projectName": "ParkingLotModelLayer",
+        "projectPath": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotModelLayer\\ParkingLotModelLayer.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotRepositoryLayer\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotModelLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,86 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.3, 3.1.3]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotRepositoryLayer\\ParkingLotRepositoryLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotRepositoryLayer\\ParkingLotRepositoryLayer.csproj",
+        "projectName": "ParkingLotRepositoryLayer",
+        "projectPath": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotRepositoryLayer\\ParkingLotRepositoryLayer.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotRepositoryLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotModelLayer\\ParkingLotModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\ParkingLotApplication\\ParkingLotWebApi\\ParkingLotModelLayer\\ParkingLotModelLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

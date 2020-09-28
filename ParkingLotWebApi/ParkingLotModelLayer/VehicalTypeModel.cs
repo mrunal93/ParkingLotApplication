@@ -4,7 +4,8 @@ using System.Text;
 
 namespace ParkingLotModelLayer
 {
-    class VehicalType
+    public class VehicalTypeModel
     {
+        public string VehicalType { get; set; }
     }
 }
