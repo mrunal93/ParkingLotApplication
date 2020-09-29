@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ParkingLotBusinessLayer;
@@ -38,6 +39,31 @@ namespace ParkingLotWebApi.Controllers
             catch (Exception)
             {
                 return this.BadRequest(new Response(HttpStatusCode.BadRequest, "List of Parking not displayed", null));
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route(nameof(UserLoginData))]
+        public IActionResult UserLoginData(UserTypeModel user)
+        {
+
+            var userResult = userBusiness.AddUserType(user);
+            try
+            {
+                if (userResult != null)
+                {
+                    var jsonToken = userBusiness.GenerateToken(userResult, "User");
+
+                    return Ok(new Response(HttpStatusCode.OK, "login done successfully", jsonToken));
+                }
+                return NotFound(new Response(HttpStatusCode.NotFound, "List not fount", userResult));
+
+            }
+            catch (System.Exception)
+            {
+
+                return BadRequest(new Response(HttpStatusCode.BadRequest, "List canot display", null));
             }
         }
     }

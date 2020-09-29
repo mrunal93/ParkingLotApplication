@@ -8,5 +8,6 @@ namespace ParkingLotBusinessLayer
     public interface IUserTypeBusiness
     {
         UserTypeModel AddUserType(UserTypeModel userType);
+        string GenerateToken(UserTypeModel login, string type);
     }
 }

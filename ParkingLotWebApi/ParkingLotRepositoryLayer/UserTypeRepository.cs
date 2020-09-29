@@ -1,9 +1,13 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using ParkingLotModelLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
 namespace ParkingLotRepositoryLayer
@@ -38,7 +42,7 @@ namespace ParkingLotRepositoryLayer
             var encodePassowrd = this.EncodePassword(userType.Password);
 
             sqlCommand.Parameters.AddWithValue("@email", userType.Email);
-            sqlCommand.Parameters.AddWithValue("@Password", userType.Password);
+            sqlCommand.Parameters.AddWithValue("@Password", encodePassowrd);
             sqlCommand.Parameters.AddWithValue("role", userType.Roles);
 
             sqlConnection.Open();
@@ -46,6 +50,32 @@ namespace ParkingLotRepositoryLayer
             sqlConnection.Close();
 
             return userType;
+        }
+
+        public string GenerateToken(UserTypeModel login, string type)
+        {
+
+            try
+            {
+                var symmetricSecuritykey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
+
+                var signingCreds = new SigningCredentials(symmetricSecuritykey, SecurityAlgorithms.HmacSha256);
+
+                var claims = new List<Claim>();
+                claims.Add(new Claim(ClaimTypes.Role, "User"));
+                claims.Add(new Claim("Email", login.Email.ToString()));
+                claims.Add(new Claim("Password", login.Password.ToString()));
+                var token = new JwtSecurityToken(configuration["Jwt:Issuer"],
+                    configuration["Jwt:Issuer"],
+                    claims,
+                    expires: DateTime.Now.AddHours(120),
+                    signingCredentials: signingCreds);
+                return new JwtSecurityTokenHandler().WriteToken(token);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

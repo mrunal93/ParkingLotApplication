@@ -19,5 +19,10 @@ namespace ParkingLotBusinessLayer
         {
             return userTypeRepository.AddUserType(userType);
         }
+
+        public string GenerateToken(UserTypeModel login, string type)
+        {
+            return userTypeRepository.GenerateToken(login, type);
+        }
     }
 }

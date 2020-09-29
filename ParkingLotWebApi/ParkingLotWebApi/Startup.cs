@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,8 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using ParkingLotBusinessLayer;
 using ParkingLotRepositoryLayer;
+using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace ParkingLotWebApi
@@ -31,8 +35,8 @@ namespace ParkingLotWebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddTransient<IParkingBusinessLayer, ParkingBusinessLayer>();
             services.AddTransient<IParkingRepository, ParkingRepository>();
-            //services.AddTransient<IUserTypeBusiness, UserTypeBusiness>();
-            //services.AddTransient<IUserTypeRepository, UserTypeRepository>();
+            services.AddTransient<IUserTypeBusiness, UserTypeBusiness>();
+            services.AddTransient<IUserTypeRepository, UserTypeRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info
@@ -42,7 +46,28 @@ namespace ParkingLotWebApi
                     Description = "ParkingLot ASP.NET(CORE) Web Api's"
                 });
 
+                c.AddSecurityDefinition("oauth2", new ApiKeyScheme
+                {
+                    Description = "Using the jwt bearer token",
+                    Name = "Authorization",
+                    In = "header",
+                    Type = "apiKey"
+                });
+                c.OperationFilter<SecurityRequirementsOperationFilter>();
+
             });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+              .AddJwtBearer(options =>
+              {
+                  var serverSecret = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:key"]));
+                  options.TokenValidationParameters = new TokenValidationParameters
+                  {
+                      IssuerSigningKey = serverSecret,
+                      ValidIssuer = Configuration["JWT:Issuer"],
+                      ValidAudience = Configuration["JWT:Audience"]
+                  };
+
+              });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
