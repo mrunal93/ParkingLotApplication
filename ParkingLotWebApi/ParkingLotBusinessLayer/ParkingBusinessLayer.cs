@@ -4,7 +4,7 @@ using System;
 
 namespace ParkingLotBusinessLayer
 {
-    public class ParkingBusinessLayer
+    public class ParkingBusinessLayer :IParkingBusinessLayer 
     {
 
         public readonly IParkingRepository parkingRepository;
@@ -14,25 +14,40 @@ namespace ParkingLotBusinessLayer
             this.parkingRepository = parkingRepository;
         }
 
+        
         public ParkingModel AddParkingData(ParkingModel data)
         {
             return parkingRepository.AddParkingData(data);
         }
-        ParkingTypeModel AddParkingType(ParkingTypeModel typeModel)
+       
+        public ParkingTypeModel AddParkingType(ParkingTypeModel typeModel)
         {
             return parkingRepository.AddParkingType(typeModel);
         }
-        RolesModel AddRoles(RolesModel roles)
+       
+        public RolesModel AddRoles(RolesModel roles)
         {
             return parkingRepository.AddRoles(roles);
         }
-        VehicalTypeModel AddVehicalType(VehicalTypeModel vehicalType)
+       
+        public VehicalTypeModel AddVehicalType(VehicalTypeModel vehicalType)
         {
             return parkingRepository.AddVehicalType(vehicalType);
         }
-        ParkingModel Unparked(ParkingModel unpark)
+        
+        public ParkingModel Unparked(ParkingModel unpark)
         {
             return parkingRepository.Unparked(unpark);
+        }
+
+        public ParkingModel SearchByVehicalNo(string vehicalnumber)
+        {
+            return parkingRepository.SearchByVehicalNo(vehicalnumber);
+        }
+        
+        public ParkingModel SearchByParkingSlot(int slotnumber)
+        {
+            return parkingRepository.SearchByParkingSlot(slotnumber);
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace ParkingLotRepositoryLayer
 {
-    public class ParkingRepository
+    public class ParkingRepository : IParkingRepository
     {
         private readonly IConfiguration configuration;
         private readonly string connectionString;
@@ -26,8 +26,6 @@ namespace ParkingLotRepositoryLayer
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.Parameters.AddWithValue("@parkingSlot", data.parkingslot);
             sqlCommand.Parameters.AddWithValue("@VehicalNo", data.VehicalNo);
-            sqlCommand.Parameters.AddWithValue("@entryTime", data.EntryTime);
-            sqlCommand.Parameters.AddWithValue("@parkingSlot", data.parkingslot);
             sqlCommand.Parameters.AddWithValue("@isDisable", data.isDisabled);
             sqlCommand.Parameters.AddWithValue("@vehicalTypeId", data.vehicalTypeId);
             sqlCommand.Parameters.AddWithValue("@parkingtypeId", data.ParkingTypeId);
@@ -85,13 +83,62 @@ namespace ParkingLotRepositoryLayer
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             sqlCommand.Parameters.AddWithValue("@ParkingSlot", unpark.parkingslot);
-            sqlCommand.Parameters.AddWithValue("@entryTime", unpark.EntryTime);
-            sqlCommand.Parameters.AddWithValue("@isDisable", unpark.isDisabled);
 
             sqlConnection.Open();
             sqlCommand.ExecuteNonQuery();
             sqlConnection.Close();
             return unpark;
+        }
+
+        public ParkingModel SearchByVehicalNo(string vehicalnumber)
+        {
+            ParkingModel vehical = new ParkingModel();
+
+            SqlCommand sqlCommand = new SqlCommand("sp_SearchByVehicalNumber", sqlConnection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("vehicalNO", vehicalnumber);
+            sqlConnection.Open();
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            while (sqlDataReader.Read())
+            {
+                vehical.parkingslot = Convert.ToInt32(sqlDataReader["parkingSlot"]);
+                vehical.VehicalNo = sqlDataReader["VehicalNo"].ToString();
+                vehical.EntryTime = sqlDataReader["EntryTime"].ToString();
+                vehical.ExitTime = sqlDataReader["ExitTime"].ToString();
+                vehical.isDisabled = Convert.ToInt32(sqlDataReader["isDisabled"]);
+                vehical.ParkingCharges = Convert.ToInt32(sqlDataReader["ParkingCharges"]);
+                vehical.vehicalTypeId = Convert.ToInt32(sqlDataReader["vehicalTypeId"]);
+                vehical.roleId = Convert.ToInt32(sqlDataReader["roleId"]);
+                vehical.ParkingTypeId = Convert.ToInt32(sqlDataReader["ParkingTypeId"]);
+            }
+            return vehical;
+        }
+
+        public ParkingModel SearchByParkingSlot(int slotnumber)
+        {
+            ParkingModel vehical = new ParkingModel();
+
+            SqlCommand sqlCommand = new SqlCommand("sp_SearchByParkingSlot", sqlConnection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@parkingSlot", slotnumber);
+
+            sqlConnection.Open();
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            while (sqlDataReader.Read())
+            {
+                vehical.parkingslot = Convert.ToInt32(sqlDataReader["parkingSlot"]);
+                vehical.VehicalNo = sqlDataReader["VehicalNo"].ToString();
+                vehical.EntryTime = sqlDataReader["EntryTime"].ToString();
+                vehical.ExitTime = sqlDataReader["ExitTime"].ToString();
+                vehical.isDisabled = Convert.ToInt32(sqlDataReader["isDisabled"]);
+                vehical.ParkingCharges = Convert.ToInt32(sqlDataReader["ParkingCharges"]);
+                vehical.vehicalTypeId = Convert.ToInt32(sqlDataReader["vehicalTypeId"]);
+                vehical.roleId = Convert.ToInt32(sqlDataReader["roleId"]);
+                vehical.ParkingTypeId = Convert.ToInt32(sqlDataReader["ParkingTypeId"]);
+            }
+            return vehical;
         }
     }
 }

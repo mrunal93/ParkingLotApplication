@@ -1,0 +1,14 @@
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\bin\Debug\netcoreapp2.1\ParkingLotBusinessLayer.deps.json
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\bin\Debug\netcoreapp2.1\ParkingLotBusinessLayer.dll
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\bin\Debug\netcoreapp2.1\ParkingLotBusinessLayer.pdb
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\bin\Debug\netcoreapp2.1\ParkingLotModelLayer.dll
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\bin\Debug\netcoreapp2.1\ParkingLotRepositoryLayer.dll
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\bin\Debug\netcoreapp2.1\ParkingLotRepositoryLayer.pdb
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\bin\Debug\netcoreapp2.1\ParkingLotModelLayer.pdb
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\obj\Debug\netcoreapp2.1\ParkingLotBusinessLayer.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\obj\Debug\netcoreapp2.1\ParkingLotBusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\obj\Debug\netcoreapp2.1\ParkingLotBusinessLayer.AssemblyInfo.cs
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\obj\Debug\netcoreapp2.1\ParkingLotBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\obj\Debug\netcoreapp2.1\ParkingLotBusinessLayer.csproj.CopyComplete
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\obj\Debug\netcoreapp2.1\ParkingLotBusinessLayer.dll
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotBusinessLayer\obj\Debug\netcoreapp2.1\ParkingLotBusinessLayer.pdb

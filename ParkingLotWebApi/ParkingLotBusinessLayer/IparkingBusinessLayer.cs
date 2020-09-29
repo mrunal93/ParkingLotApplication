@@ -13,5 +13,7 @@ namespace ParkingLotBusinessLayer
         RolesModel AddRoles(RolesModel roles);
         VehicalTypeModel AddVehicalType(VehicalTypeModel vehicalType);
         ParkingModel Unparked(ParkingModel unpark);
+        ParkingModel SearchByVehicalNo(string vehicalnumber);
+        ParkingModel SearchByParkingSlot(int slotnumber);
     }
 }

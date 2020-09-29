@@ -1,0 +1,8 @@
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\bin\Debug\netcoreapp2.1\ParkingLotModelLayer.deps.json
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\bin\Debug\netcoreapp2.1\ParkingLotModelLayer.dll
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\bin\Debug\netcoreapp2.1\ParkingLotModelLayer.pdb
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\obj\Debug\netcoreapp2.1\ParkingLotModelLayer.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\obj\Debug\netcoreapp2.1\ParkingLotModelLayer.AssemblyInfo.cs
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\obj\Debug\netcoreapp2.1\ParkingLotModelLayer.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\obj\Debug\netcoreapp2.1\ParkingLotModelLayer.dll
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\obj\Debug\netcoreapp2.1\ParkingLotModelLayer.pdb
