@@ -31,24 +31,19 @@ namespace ParkingLotRepositoryLayer
             encPassword = Encoding.UTF8.GetBytes(password);
             string encodedPassword = Convert.ToBase64String(encPassword);
             return encodedPassword;
-
         }
 
         public UserTypeModel AddUserType(UserTypeModel userType)
         {
             SqlCommand sqlCommand = new SqlCommand("sp_AddUserType", sqlConnection);
             sqlCommand.CommandType = CommandType.StoredProcedure;
-
             var encodePassowrd = this.EncodePassword(userType.Password);
-
             sqlCommand.Parameters.AddWithValue("@email", userType.Email);
             sqlCommand.Parameters.AddWithValue("@Password", encodePassowrd);
-            sqlCommand.Parameters.AddWithValue("role", userType.Roles);
-
+            sqlCommand.Parameters.AddWithValue("@role", userType.Roles);
             sqlConnection.Open();
             sqlCommand.ExecuteNonQuery();
             sqlConnection.Close();
-
             return userType;
         }
 
@@ -62,7 +57,7 @@ namespace ParkingLotRepositoryLayer
                 var signingCreds = new SigningCredentials(symmetricSecuritykey, SecurityAlgorithms.HmacSha256);
 
                 var claims = new List<Claim>();
-                claims.Add(new Claim(ClaimTypes.Role, "User"));
+                claims.Add(new Claim(ClaimTypes.Role, login.Roles));
                 claims.Add(new Claim("Email", login.Email.ToString()));
                 claims.Add(new Claim("Password", login.Password.ToString()));
                 var token = new JwtSecurityToken(configuration["Jwt:Issuer"],

@@ -11,12 +11,13 @@ using ParkingLotModelLayer;
 
 namespace ParkingLotWebApi.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Police,Owner")]
     [Route("api/[controller]")]
     [ApiController]
     public class PoliceController : ControllerBase
     {
         public readonly IParkingBusinessLayer parkingBusiness;
+        public readonly MSMQParkingLot mSMQParking = new MSMQParkingLot();
 
         public PoliceController(IParkingBusinessLayer parkingBusiness)
         {
@@ -26,7 +27,7 @@ namespace ParkingLotWebApi.Controllers
 
 
         [HttpPost]
-        [Route("pAddParking")]
+        [Route("AddParking")]
         public IActionResult AddParking(ParkingModel parking)
         {
             var parkingResult = this.parkingBusiness.AddParkingData(parking);
@@ -35,6 +36,7 @@ namespace ParkingLotWebApi.Controllers
             {
                 if (parkingResult != null)
                 {
+                    mSMQParking.Sender("Police has parked his vehical" + " " + "parking slot Id: " + parking.parkingslot);
                     return this.Ok(new Response(HttpStatusCode.OK, "The Parking Data", parkingResult));
                 }
                 return this.NotFound(new Response(HttpStatusCode.NotFound, "Parking Data Not Found", parkingResult));
@@ -46,7 +48,7 @@ namespace ParkingLotWebApi.Controllers
         }
 
         [HttpPut]
-        [Route("pUnparking")]
+        [Route("Unparking")]
         public IActionResult Unparking(ParkingModel unpark)
         {
             var parkingResult = this.parkingBusiness.Unparked(unpark);
@@ -55,6 +57,7 @@ namespace ParkingLotWebApi.Controllers
             {
                 if (parkingResult != null)
                 {
+                    mSMQParking.Sender("Police has Unparked his vehical" + " " + "parking slot Id: " + unpark.parkingslot);
                     return this.Ok(new Response(HttpStatusCode.OK, "The Parking Data", parkingResult));
                 }
                 return this.NotFound(new Response(HttpStatusCode.NotFound, "Parking Data Not Found", parkingResult));
@@ -66,7 +69,7 @@ namespace ParkingLotWebApi.Controllers
         }
 
         [HttpGet]
-        [Route("pSearchByVehicalNo")]
+        [Route("SearchByVehicalNo")]
         public IActionResult SearchByVehicalNo(string vehicalnumber)
         {
             var parkingData = this.parkingBusiness.SearchByVehicalNo(vehicalnumber);
@@ -87,7 +90,7 @@ namespace ParkingLotWebApi.Controllers
         }
 
         [HttpGet]
-        [Route("pSearchByParkingSlot")]
+        [Route("SearchByParkingSlot")]
         public IActionResult SearchByParkingSlot(int slotnumber)
         {
             var parkingData = this.parkingBusiness.SearchByParkingSlot(slotnumber);

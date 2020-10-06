@@ -231,6 +231,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "Experimental.System.Messaging": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Learning.MessageQueue": {
+              "target": "Package",
+              "version": "[4.1.1, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",

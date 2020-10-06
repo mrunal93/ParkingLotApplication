@@ -1,6 +1,7 @@
 ﻿using ParkingLotModelLayer;
 using ParkingLotRepositoryLayer;
 using System;
+using System.Collections.Generic;
 
 namespace ParkingLotBusinessLayer
 {
@@ -48,6 +49,11 @@ namespace ParkingLotBusinessLayer
         public ParkingModel SearchByParkingSlot(int slotnumber)
         {
             return parkingRepository.SearchByParkingSlot(slotnumber);
+        }
+
+       public IEnumerable <ParkingModel> GetAllData()
+        {
+            return parkingRepository.GetAllData();
         }
     }
 }

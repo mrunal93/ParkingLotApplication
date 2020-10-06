@@ -1,0 +1,6 @@
+﻿Owner Parking Has been added
+Owner has parked his vehical 14 string
+Driver has parked his vehical parking slot Id: 1
+Owner has UnParked his vehical parking slot Id: 13
+Owner has parked his vehical parking slot Id: 15
+Owner has parked his vehical parking slot Id: 15

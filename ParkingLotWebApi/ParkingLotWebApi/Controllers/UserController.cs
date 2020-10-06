@@ -16,6 +16,7 @@ namespace ParkingLotWebApi.Controllers
     public class UserController : ControllerBase
     {
         public readonly IUserTypeBusiness userBusiness;
+        public readonly MSMQParkingLot mSMQParking = new MSMQParkingLot();
 
         public UserController(IUserTypeBusiness userBusiness)
         {
@@ -23,7 +24,6 @@ namespace ParkingLotWebApi.Controllers
         }
 
         [HttpPost]
-        [Route("AddUsertype")]
         public IActionResult AddUserType(UserTypeModel userType)
         {
             var userResult = this.userBusiness.AddUserType(userType);
@@ -44,7 +44,7 @@ namespace ParkingLotWebApi.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        [Route(nameof(UserLoginData))]
+        [Route("Login")]
         public IActionResult UserLoginData(UserTypeModel user)
         {
 

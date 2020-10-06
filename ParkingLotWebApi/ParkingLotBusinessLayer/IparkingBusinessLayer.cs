@@ -15,5 +15,6 @@ namespace ParkingLotBusinessLayer
         ParkingModel Unparked(ParkingModel unpark);
         ParkingModel SearchByVehicalNo(string vehicalnumber);
         ParkingModel SearchByParkingSlot(int slotnumber);
+        IEnumerable<ParkingModel> GetAllData();
     }
 }

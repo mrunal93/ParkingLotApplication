@@ -18,8 +18,9 @@ C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi
 C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi\bin\Debug\netcoreapp2.1\ParkingLotBusinessLayer.pdb
 C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi\bin\Debug\netcoreapp2.1\ParkingLotModelLayer.pdb
 C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi\bin\Debug\netcoreapp2.1\ParkingLotRepositoryLayer.pdb
-C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi\obj\Debug\netcoreapp2.1\ParkingLotWebApi.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi\obj\Debug\netcoreapp2.1\ParkingLotWebApi.csproj.CopyComplete
 C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi\obj\Debug\netcoreapp2.1\ParkingLotWebApi.dll
 C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi\obj\Debug\netcoreapp2.1\ParkingLotWebApi.pdb
 C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi\obj\Debug\netcoreapp2.1\ParkingLotWebApi.genruntimeconfig.cache
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi\bin\Debug\netcoreapp2.1\web.config
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotWebApi\obj\Debug\netcoreapp2.1\ParkingLotWebApi.csproj.CoreCompileInputs.cache

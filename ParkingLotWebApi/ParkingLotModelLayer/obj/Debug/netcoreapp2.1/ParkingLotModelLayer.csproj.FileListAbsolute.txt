@@ -6,3 +6,4 @@ C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelL
 C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\obj\Debug\netcoreapp2.1\ParkingLotModelLayer.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\obj\Debug\netcoreapp2.1\ParkingLotModelLayer.dll
 C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\obj\Debug\netcoreapp2.1\ParkingLotModelLayer.pdb
+C:\Users\Admin\Documents\ParkingLotApplication\ParkingLotWebApi\ParkingLotModelLayer\obj\Debug\netcoreapp2.1\ParkingLotModelLayer.csprojAssemblyReference.cache

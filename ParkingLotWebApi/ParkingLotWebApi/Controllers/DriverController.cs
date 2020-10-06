@@ -11,12 +11,13 @@ using ParkingLotModelLayer;
 
 namespace ParkingLotWebApi.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Driver,Owner")]
     [Route("api/[controller]")]
     [ApiController]
     public class DriverController : ControllerBase
     {
         public readonly IParkingBusinessLayer parkingBusiness;
+        public readonly MSMQParkingLot mSMQParking = new MSMQParkingLot();
 
         public DriverController(IParkingBusinessLayer parkingBusiness)
         {
@@ -24,7 +25,7 @@ namespace ParkingLotWebApi.Controllers
         }
 
         [HttpPost]
-        //[Route("DAddParking")]
+        [Route("AddParking")]
         public IActionResult AddParking(ParkingModel parking)
         {
             var parkingResult = this.parkingBusiness.AddParkingData(parking);
@@ -33,6 +34,7 @@ namespace ParkingLotWebApi.Controllers
             {
                 if (parkingResult != null)
                 {
+                    mSMQParking.Sender("Driver has parked his vehical" + " " + "parking slot Id: " + parking.parkingslot);
                     return this.Ok(new Response(HttpStatusCode.OK, "The Parking Data", parkingResult));
                 }
                 return this.NotFound(new Response(HttpStatusCode.NotFound, "Parking Data Not Found", parkingResult));
@@ -44,7 +46,7 @@ namespace ParkingLotWebApi.Controllers
         }
 
         [HttpPut]
-        //[Route("DUnparking")]
+        [Route("Unparking")]
         public IActionResult Unparking(ParkingModel unpark)
         {
             var parkingResult = this.parkingBusiness.Unparked(unpark);
@@ -53,6 +55,7 @@ namespace ParkingLotWebApi.Controllers
             {
                 if (parkingResult != null)
                 {
+                    mSMQParking.Sender("Owner has UnParked his vehical" + " " + "parking slot Id: " + unpark.parkingslot);
                     return this.Ok(new Response(HttpStatusCode.OK, "The Parking Data", parkingResult));
                 }
                 return this.NotFound(new Response(HttpStatusCode.NotFound, "Parking Data Not Found", parkingResult));

@@ -7,6 +7,7 @@ namespace ParkingLotRepositoryLayer
 {
     public interface IParkingRepository
     {
+        IEnumerable<ParkingModel> GetAllData();
         ParkingModel AddParkingData(ParkingModel data);
         ParkingTypeModel AddParkingType(ParkingTypeModel typeModel);
         RolesModel AddRoles(RolesModel roles);
